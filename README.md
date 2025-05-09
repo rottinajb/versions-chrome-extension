@@ -1,2 +1,3 @@
-# versions-chrome-extension
-Lil chrome extension to show what Dotcom build is an an environment
+# Dotcom environments chrome extension
+
+A useful little tool to quickly see what Dotcom version is in which environment.

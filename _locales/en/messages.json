@@ -1,0 +1,14 @@
+{
+	"extName": {
+		"message": "Dotcom Versions tool",
+		"description": "The name of the extension."
+	},
+	"tagline": {
+		"message": "Dotcom Envs",
+		"description": "The tagline."
+	},
+	"extDescription": {
+		"message": "Displays what version is in whcih environment.",
+		"description": "The description of the extension in the extensions page."
+	}
+}
