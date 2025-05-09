@@ -1,8 +1,8 @@
 async function getVersions() {
 	const prd = "https://dotcom.jetblue.com";
 	const nprd = "https://dotcom-nprd.jetblue.com";
-
 	const envs = [prd, nprd];
+
 	for (const env of envs) {
 		console.log(env);
 		try {
@@ -16,23 +16,20 @@ async function getVersions() {
 			const ver = doc.querySelector('meta[name="version"]').content;
 			console.log(ver);
 			printVersions(ver, env);
-			//return doc;
 		} catch (error) {
 			console.error("Failed to fetch:", error);
 		}
 	}
 }
 
-async function printVersions(ver, env) {
-	console.log(env);
-	let envAbbreviation = "prd";
-	const versionVal = document.createTextNode(ver);
-	if (env.includes("nprd")) {
-		console.log(envAbbreviation);
-		envAbbreviation = "nprd";
-	}
+function printVersions(ver, env) {
+	const envAbbreviation = env.includes("nprd") ? "nprd" : "prd";
 	const el = document.getElementById(envAbbreviation);
-	el.appendChild(versionVal);
+	if (el) {
+		el.appendChild(document.createTextNode(ver));
+	} else {
+		console.error(`Element with id "${envAbbreviation}" not found.`);
+	}
 }
 
 window.addEventListener("load", () => {
