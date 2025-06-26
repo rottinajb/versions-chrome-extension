@@ -7,8 +7,12 @@
 		"message": "Dotcom Envs",
 		"description": "The tagline."
 	},
-	"extDescription": {
-		"message": "Displays what version is in whcih environment.",
-		"description": "The description of the extension in the extensions page."
-	}
+        "extDescription": {
+                "message": "Displays what version is in whcih environment.",
+                "description": "The description of the extension in the extensions page."
+        },
+        "optionsTitle": {
+                "message": "Environment Options",
+                "description": "Title for the options page"
+        }
 }
