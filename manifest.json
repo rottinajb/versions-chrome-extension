@@ -8,12 +8,12 @@
 		"default_popup": "popup.html",
 		"default_title": "__MSG_extName__"
 	},
-	"web_accessible_resources": [
-		{
-			"resources": ["images/*", "popup.js"],
-			"matches": ["*://*.jetblue.com/*"]
-		}
-	],
+        "web_accessible_resources": [
+                {
+                        "resources": ["images/*"],
+                        "matches": ["*://*.jetblue.com/*"]
+                }
+        ],
 	"author": "@mr92208",
 	"default_locale": "en",
 	"description": "__MSG_extDescription__",
@@ -21,8 +21,16 @@
 	"incognito": "spanning",
 	"manifest_version": 3,
 	"name": "__MSG_extName__",
-	"offline_enabled": false,
-	"host_permissions": ["*://*.jetblue.com/*"],
-	"short_name": "Versions",
-	"version": "1.0.0"
+        "offline_enabled": false,
+        "host_permissions": ["*://*.jetblue.com/*"],
+        "permissions": ["storage"],
+        "background": {
+                "service_worker": "background.js"
+        },
+        "options_page": "options.html",
+        "content_security_policy": {
+                "extension_pages": "script-src 'self'; object-src 'self'"
+        },
+        "short_name": "Versions",
+        "version": "1.0.0"
 }

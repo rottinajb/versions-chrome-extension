@@ -1,25 +1,19 @@
 async function getVersions() {
-	const prd = "https://www.jetblue.com/flying-with-us";
-	const nprd = "https://dotcom-nprd.jetblue.com";
-	const envs = [prd, nprd];
+        chrome.storage.local.get('envList').then((res) => {
+                const envs = res.envList || [
+                        'https://www.jetblue.com/flying-with-us',
+                        'https://dotcom-nprd.jetblue.com'
+                ];
 
-	for (const env of envs) {
-		console.log(env);
-		try {
-			const response = await fetch(env);
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-			const html = await response.text();
-			const parser = new DOMParser();
-			const doc = parser.parseFromString(html, "text/html");
-			const ver = doc.querySelector('meta[name="version"]').content;
-			console.log(ver);
-			printVersions(ver, env);
-		} catch (error) {
-			console.error("Failed to fetch:", error);
-		}
-	}
+                chrome.runtime.sendMessage({ type: 'getVersions', envs }, (data) => {
+                        for (const env of envs) {
+                                const ver = data ? data[env] : null;
+                                if (ver) {
+                                        printVersions(ver, env);
+                                }
+                        }
+                });
+        });
 }
 
 function printVersions(ver, env) {
@@ -33,5 +27,9 @@ function printVersions(ver, env) {
 }
 
 window.addEventListener("load", () => {
-	getVersions();
+        const taglineEl = document.getElementById("tagline");
+        if (taglineEl) {
+                taglineEl.textContent = chrome.i18n.getMessage("tagline");
+        }
+        getVersions();
 });
