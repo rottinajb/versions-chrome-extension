@@ -46,6 +46,9 @@ code {
 #prd {
   margin-left: 13px;
 }
+#nprd {
+  margin-left: 4px;
+}
 
 @keyframes animatedBackground {
 	0% {
