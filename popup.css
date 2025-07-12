@@ -38,9 +38,10 @@ a {
 }
 
 code {
-  color: gold;
-  display: inline;
-  margin-left: 3px;
+  color: cyan;
+  font-family: monospace;
+  font-size: .85rem;
+  font-weight: 500;
 }
 
 #prd {
