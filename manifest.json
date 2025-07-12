@@ -10,7 +10,7 @@
 	},
 	"web_accessible_resources": [
 		{
-			"resources": ["images/*", "popup.js"],
+			"resources": ["images/*"],
 			"matches": ["*://*.jetblue.com/*"]
 		}
 	],
