@@ -5,7 +5,7 @@ A useful little tool to quickly see what Dotcom version is in which environment.
 ## Installation
 
 1. Clone the repo OR click the green Code button.
-2. CLick Download ZIP, and unzip to a location of your choice.
+2. Click Download ZIP, and unzip to a location of your choice.
 3. In the chrome browser, type `chrome://extensions`
 4. In the upper right cornder ensure "Developer mode" is enabled.
 5. On the top left, click "Load Unpacked".
