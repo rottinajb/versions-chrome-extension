@@ -1,6 +1,6 @@
 async function getVersions() {
 	const prd = "https://www.jetblue.com/flying-with-us";
-	const nprd = "https://dotcom-nprd.jetblue.com";
+	const nprd = "https://www-qa2.jetblue.com/flying-with-us";
 	const envs = [prd, nprd];
 
 	for (const env of envs) {
