@@ -38,15 +38,17 @@ a {
 }
 
 code {
-  color: cyan;
   font-size: .83rem;
   font-weight: 500;
+  text-shadow: 2px 2px 0 #000;
 }
 
 #prd {
+  color: lime;
   margin-left: 13px;
 }
 #nprd {
+  color: cyan;
   margin-left: 4px;
 }
 
