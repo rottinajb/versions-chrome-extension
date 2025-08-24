@@ -1,0 +1,40 @@
+{
+  "name": "dotcom-versions-chrome-extension",
+  "version": "1.0.0",
+  "description": "A useful little tool to quickly see what Dotcom version is in which environment",
+  "main": "index.js",
+  "bin": {
+    "dotcom-versions-chrome-extension": "./bin/install.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "chrome-extension",
+    "dotcom",
+    "versions",
+    "jetblue"
+  ],
+  "author": "@mr92208",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rottinajb/versions-chrome-extension.git"
+  },
+  "homepage": "https://github.com/rottinajb/versions-chrome-extension",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "bin/",
+    "manifest.json",
+    "popup.html",
+    "popup.js",
+    "popup.css",
+    "popup-using-api.js",
+    "images/",
+    "_locales/",
+    "klarheit-xbold.68e4c2abe7a37ca4.woff2",
+    "README.md"
+  ]
+}
