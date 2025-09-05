@@ -13,4 +13,4 @@ A useful little tool to quickly see what Dotcom version is in which environment.
 7. Click "Select"
 8. Click the Extensions icon in chrome. <img width="34" alt="extensions icon" src="https://github.com/user-attachments/assets/72acf725-6565-47ea-828b-9c5419239dc8" />
 9. Pin the Versions Extension by clicking the pin symbol.
-<img width="237" alt="Pin" src="https://github.com/user-attachments/assets/36c21ca8-2f28-45b2-946e-4a464c12f0c5" />
+   <img width="237" alt="Pin" src="https://github.com/user-attachments/assets/36c21ca8-2f28-45b2-946e-4a464c12f0c5" />
