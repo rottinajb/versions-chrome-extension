@@ -8,7 +8,7 @@
     "description": "The tagline."
   },
   "extDescription": {
-    "message": "Displays what version is in whcih environment.",
+    "message": "Displays what version is in which environment.",
     "description": "The description of the extension in the extensions page."
   }
 }
