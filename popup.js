@@ -1,37 +1,37 @@
 async function getVersions() {
-	const prd = "https://www.jetblue.com/flying-with-us";
-	const nprd = "https://dotcom-nprd.jetblue.com";
-	const envs = [prd, nprd];
-
-	for (const env of envs) {
-		console.log(env);
-		try {
-			const response = await fetch(env);
-			if (!response.ok) {
-				throw new Error(`HTTP error! status: ${response.status}`);
-			}
-			const html = await response.text();
-			const parser = new DOMParser();
-			const doc = parser.parseFromString(html, "text/html");
-			const ver = doc.querySelector('meta[name="version"]').content;
-			console.log(ver);
-			printVersions(ver, env);
-		} catch (error) {
-			console.error("Failed to fetch:", error);
-		}
-	}
+  let queryParam = Date.now().toString();
+  const prd = `https://www.jetblue.com/flying-with-us?q=${queryParam}`;
+  const nprd = `https://dotcom-nprd.jetblue.com/api/version?q=${queryParam}`;
+  printVersions((await fetchByApi(nprd)) ?? "Unknown", "nprd");
+  printVersions((await fetchByMeta(prd)) ?? "Unknown", "prd");
 }
 
+const fetchByMeta = async (url) => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
+  }
+  const html = await response.text();
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(html, "text/html");
+  const ver = doc.querySelector('meta[name="version"]').content;
+  return ver;
+};
+
+const fetchByApi = async (url) => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    return;
+  }
+  const data = await response.text();
+  return data;
+};
+
 function printVersions(ver, env) {
-	const envAbbreviation = env.includes("nprd") ? "nprd" : "prd";
-	const el = document.getElementById(envAbbreviation);
-	if (el) {
-		el.appendChild(document.createTextNode(ver));
-	} else {
-		console.error(`Element with id "${envAbbreviation}" not found.`);
-	}
+  console.log(`Version: ${ver} is in environment: ${env}`);
+  document.getElementById(env).appendChild(document.createTextNode(ver));
 }
 
 window.addEventListener("load", () => {
-	getVersions();
+  getVersions();
 });
