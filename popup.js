@@ -1,6 +1,6 @@
 async function getVersions() {
   let queryParam = Date.now().toString();
-  const prd = `https://www.jetblue.com/flying-with-us?q=${queryParam}`;
+  const prd = `https://www.jetblue.com/mobile-app/shut-eye?q=${queryParam}`;
   const nprd = `https://dotcom-nprd.jetblue.com/api/version?q=${queryParam}`;
   printVersions((await fetchByApi(nprd)) ?? "Unknown", "nprd");
   printVersions((await fetchByMeta(prd)) ?? "Unknown", "prd");
