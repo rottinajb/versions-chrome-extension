@@ -4,6 +4,16 @@ A useful little tool to quickly see what Dotcom version is in which environment.
 
 ## Installation
 
+### Quick Install with npx (Recommended)
+
+```bash
+npx dotcom-versions-chrome-extension
+```
+
+This will automatically download the extension files to your home directory and provide instructions for loading it in Chrome.
+
+### Manual Installation
+
 1. Clone the repo OR click the green Code button.
 2. Click Download ZIP, and unzip to a location of your choice.
 3. In the chrome browser, type `chrome://extensions`
