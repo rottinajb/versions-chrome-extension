@@ -2,6 +2,9 @@
 
 A useful little tool to quickly see what Dotcom version is in which environment.
 
+<img width="187" height="232" alt="versions-chrome-extension in action" src="https://github.com/user-attachments/assets/ff9822a4-09ff-4f86-8d67-31e7f1c64733" />
+
+
 ## Installation
 
 ### Quick Install with npx (Recommended)
