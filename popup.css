@@ -4,24 +4,36 @@
 }
 
 body {
-  animation: animatedBackground 15s cubic-bezier(0.9, 0.6, 0.55, 0.44) infinite;
-  background-blend-mode: screen;
-  background-image: url("images/bubbles.png");
+  animation: animatedBackground 79s ease-in-out infinite;
+  background-image:
+      linear-gradient(
+        rgba(0, 0, 0, 0.20),
+        rgba(0, 0, 0, 0.20)
+      ),
+      url("images/bubbles.png");
+  background-size: cover;
   background-position: right 48% bottom 192%;
   background-repeat: repeat-y;
   font-family: "klarheit";
-  height: 66px;
+  height: 176px;
   width: 160px;
 }
 
-h1 {
+h1, h2 {
   color: white;
   font-size: 0.95rem;
   font-weight: 400;
   line-height: 1.5;
-  margin: 0 auto;
+  margin: 0 auto 0.25rem auto;
   padding-bottom: 0;
   text-shadow: 3px 3px 0 #000;
+}
+
+h2 {
+  color: #d5dce1;
+  font-size: 1rem;
+  font-variant: small-caps;
+  margin: .45rem auto 0 auto;
 }
 
 p {
@@ -51,15 +63,34 @@ code {
   color: cyan;
   margin-left: 4px;
 }
+#legacyProd, #legacyStg2, #legacyInt2, #legacyQa3 {
+  color: #d5dce1;
+  margin-left: 6px;
+}
+#legacyStg2 {
+  margin-left: 3px;
+}
+#legacyInt2 {
+  margin-left: 9px;
+}
+#legacyQa3 {
+  margin-left: 10px;
+}
 
 @keyframes animatedBackground {
   0% {
     background-position: 0% 0%;
   }
+  25% {
+    background-position: 50% 25%;
+  }
   50% {
-    background-position: 0% 50%;
+    background-position: 100% 75%;
+  }
+  75% {
+    background-position: 50% 100%;
   }
   100% {
-    background-position: 50% 100%;
+    background-position: 0% 0%;
   }
 }
